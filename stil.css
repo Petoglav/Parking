@@ -31,7 +31,7 @@ h2{
 }
 footer{
     background-color: #000;
-    height: 31px; /* Height of the footer */
+    height: 31px;
     color: white;
     bottom:0;
     position: static;
@@ -69,6 +69,9 @@ table{
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
+}
+table img{
+    width: 90px;
 }
 tr:nth-child(even){
     background-color: #e8e8e8;
@@ -135,10 +138,6 @@ td{
     margin: 15px;
     background-color: #fff;
 }
-.sadrzaj img{
-    width: 800px;
-    height: 450px;
-}
 #submit{
     border: 1;
     background: lightblue;
@@ -150,20 +149,17 @@ td{
 #submit:hover{
     background: green;
 }
-#unesi:hover{
-    color: Black;
-}
 #unesi{
     color: #818181;
     background-color: #e8e8e8;
     cursor: pointer;
     font-size: 14px;
 }
+#unesi:hover{
+    color: Black;
+}
 #obavijest{
-    border-radius: 10px 10px 10px 10px;
-    background-color: #f44336;
-    color: White;
-    display: table;
+    color: red;
     width: 80%;
     margin: auto;
     margin-top: 20px;

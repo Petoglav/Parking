@@ -17,9 +17,7 @@
 		{
 			include_once("baza.php");
 			$veza = OtvoriBP();
-			$upit = "SELECT * FROM korisnik WHERE 
-			korisnicko_ime = '".$korime."'
-			AND lozinka = '".$_POST["lozinka"]."'";
+			$upit = "SELECT * FROM korisnik WHERE korisnicko_ime = '".$korime."' AND lozinka = '".$_POST["lozinka"]."'";
 			$rezultat = izvrsiUpit($veza,$upit);
 			$logiran=false;
 			while($row = mysqli_fetch_array($rezultat))
@@ -39,7 +37,6 @@
 			else{
 				$greska = "Lozinka i Korisničko ime se ne podudaraju!";
 			}
-			
 		}
 	}
 ?>
@@ -51,27 +48,27 @@
     <title>Prijava</title>
 </head>
 <body>
-    <?php include "header.php" ?>
-    <h1>Prijava:</h1>
-    <div class="forma">
-        <section>
-        <div id="obavijest">
-        <?php
-            if(isset($greska)){
-                echo $greska;
-            }
-        ?>
-        </div>
-        <form name="forma" id="forma" method="POST" action="prijava.php">
-            <h2>Podaci za prijavu:</h2>
-            <hr>
-            <label for="korime">Korisničko ime: </label><input name="korime" type="text" />
-            <label for="lozinka">Lozinka: </label><input name="lozinka" type="password" />
-            <br/>
-            <input name="submit" type="submit" id="submit" value="Unesi" />
-        </form>
-        </section>
+<?php include "header.php" ?>
+<h1>Prijava:</h1>
+<div class="forma">
+    <section>
+    <div id="obavijest">
+    <?php
+        if(isset($greska)){
+            echo $greska;
+        }
+    ?>
     </div>
-    <?php include "footer.php" ?>
+    <form name="forma" id="forma" method="POST" action="prijava.php">
+        <h2>Podaci za prijavu:</h2>
+        <hr>
+        <label for="korime">Korisničko ime: </label><input name="korime" type="text" />
+        <label for="lozinka">Lozinka: </label><input name="lozinka" type="password" />
+        <br/>
+        <input name="submit" type="submit" id="submit" value="Unesi" />
+    </form>
+    </section>
+</div>
+<?php include "footer.php" ?>
 </body>
 </html>
